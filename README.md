@@ -19,3 +19,9 @@ Now BR and XS are calculated in the same points!
 There are 2 tables for BRs in each subfolder, the only difference among them is the quantity of mass points in the table
 
 The documentation is being updated 1404.0102
+
+
+GF = inclusive production
+PF = photon fusion 
+VX = Associated production with a vector boson
+Xjj = Electroweak induced associated production with two jets
