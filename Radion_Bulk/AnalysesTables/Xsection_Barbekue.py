@@ -8,11 +8,11 @@ import ROOT as rt
 from ROOT import * 
 from os import path
 
-sqrts = 13 
+sqrts = 13
 
-XSECTION = np.genfromtxt('../GF_NLO_'+str(sqrts)+'TeV_ktilda_0p1.txt', skip_header=1 , skip_footer=0, dtype='str')
+XSECTION = np.genfromtxt('../GF_NLO_'+str(sqrts)+'TeV_LR_3TeV_kl_35.txt', skip_header=1 , skip_footer=0, dtype='str')
 
-BRANCHING = np.genfromtxt('../Decay_short_extended.txt', skip_header=1 , skip_footer=0, dtype='str')
+BRANCHING = np.genfromtxt('../Decay_short_kl_35_arxiv1110.6452.txt', skip_header=1 , skip_footer=0, dtype='str')
 
 counter = -1
 
@@ -23,19 +23,20 @@ hgg = 2.270E-03
 hww = 2.137E-01
 htt = 6.272E-02
 
-# k/Mpl you want to rescale to from 0.1
+# LR is lambda Radion
 
-kmpl = 0.5 
+LR = 1
 
 # brSF you want to apply to the Graviton cross section
 # and the file name
 
-#brSF = hbb*hbb*kmpl/0.1*kmpl/0.1
-#outfilename = "BulkGraviton_yr4_"+str(sqrts)+"TeV_kmpl0p5_hh4b_lowmass.dat"
-#outfilename = "BulkGraviton_yr4_"+str(sqrts)+"TeV_kmpl0p5_hh4b.dat"
+#brSF = 2*hbb*hgg*3/LR*3/LR
+#outfilename = "BulkRadion_yr4_"+str(sqrts)+"TeV_NLO_LR_"+str(LR)+"TeV_hh2b2g.dat"
 
-brSF = 2*hbb*hgg*kmpl/0.1*kmpl/0.1
-outfilename = "BulkGraviton_yr4_"+str(sqrts)+"TeV_kmpl0p5_hh2b2g.dat"
+brSF = hbb*hbb*3/LR*3/LR
+#outfilename = "BulkRadion_yr4_"+str(sqrts)+"TeV_NLO_LR_"+str(LR)+"TeV_hh4b.dat"
+outfilename = "BulkRadion_yr4_"+str(sqrts)+"TeV_NLO_LR_"+str(LR)+"TeV_hh4b_lowmass.dat"
+
 
 pbtofb = 1000
 
