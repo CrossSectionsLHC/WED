@@ -8,7 +8,9 @@ import ROOT as rt
 from ROOT import * 
 from os import path
 
-XSECTION = np.genfromtxt('../GF_NLO_13TeV_LR_3TeV_kl_35.txt', skip_header=1 , skip_footer=0, dtype='str')
+sqrts = 13
+
+XSECTION = np.genfromtxt('../GF_NLO_'+str(sqrts)+'TeV_LR_3TeV_kl_35.txt', skip_header=1 , skip_footer=0, dtype='str')
 
 BRANCHING = np.genfromtxt('../Decay_short_kl_35_arxiv1110.6452.txt', skip_header=1 , skip_footer=0, dtype='str')
 
@@ -23,16 +25,18 @@ htt = 6.272E-02
 
 # LR is lambda Radion
 
-LR = 1 
+LR = 1
 
 # brSF you want to apply to the Graviton cross section
 # and the file name
 
 #brSF = 2*hbb*hgg*3/LR*3/LR
-#outfilename = "BulkRadion_yr4_NLO_LR_1TeV_hh2b2g.dat"
+#outfilename = "BulkRadion_yr4_"+str(sqrts)+"TeV_NLO_LR_"+str(LR)+"TeV_hh2b2g.dat"
 
 brSF = hbb*hbb*3/LR*3/LR
-outfilename = "BulkRadion_yr4_NLO_LR_1TeV_hh4b.dat"
+#outfilename = "BulkRadion_yr4_"+str(sqrts)+"TeV_NLO_LR_"+str(LR)+"TeV_hh4b.dat"
+outfilename = "BulkRadion_yr4_"+str(sqrts)+"TeV_NLO_LR_"+str(LR)+"TeV_hh4b_lowmass.dat"
+
 
 pbtofb = 1000
 
@@ -42,7 +46,7 @@ pbtofb = 1000
 #maxMass = 3000
 
 minMass = 260
-maxMass = 800
+maxMass = 1100
 
 # ============================================= 
 
