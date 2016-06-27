@@ -28,15 +28,21 @@ kmpl = 0.5
 # brSF you want to apply to the Graviton cross section
 # and the file name
 
-brSF = hbb*hbb*kmpl/0.1*kmpl/0.1
-outfilename = "Graviton_yr4_0p5_hh4b.dat"
+#brSF = hbb*hbb*kmpl/0.1*kmpl/0.1
+#outfilename = "BulkGraviton_yr4_kmpl0p5_hh4b_lowmass.dat"
+
+brSF = 2*hbb*hgg*kmpl/0.1*kmpl/0.1
+outfilename = "BulkGraviton_yr4_kmpl0p5_hh2b2g.dat"
 
 pbtofb = 1000
 
 # Min and Max mass to add to your file
 
-minMass = 800
-maxMass = 3000
+#minMass = 800
+#maxMass = 3000
+
+minMass = 260
+maxMass = 1100
 
 # ============================================= 
 
