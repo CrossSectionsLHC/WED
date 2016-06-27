@@ -8,7 +8,9 @@ import ROOT as rt
 from ROOT import * 
 from os import path
 
-XSECTION = np.genfromtxt('../GF_NLO_13TeV_ktilda_0p1.txt', skip_header=1 , skip_footer=0, dtype='str')
+sqrts = 13 
+
+XSECTION = np.genfromtxt('../GF_NLO_'+str(sqrts)+'TeV_ktilda_0p1.txt', skip_header=1 , skip_footer=0, dtype='str')
 
 BRANCHING = np.genfromtxt('../Decay_short_extended.txt', skip_header=1 , skip_footer=0, dtype='str')
 
@@ -29,10 +31,11 @@ kmpl = 0.5
 # and the file name
 
 #brSF = hbb*hbb*kmpl/0.1*kmpl/0.1
-#outfilename = "BulkGraviton_yr4_kmpl0p5_hh4b_lowmass.dat"
+#outfilename = "BulkGraviton_yr4_"+str(sqrts)+"TeV_kmpl0p5_hh4b_lowmass.dat"
+#outfilename = "BulkGraviton_yr4_"+str(sqrts)+"TeV_kmpl0p5_hh4b.dat"
 
 brSF = 2*hbb*hgg*kmpl/0.1*kmpl/0.1
-outfilename = "BulkGraviton_yr4_kmpl0p5_hh2b2g.dat"
+outfilename = "BulkGraviton_yr4_"+str(sqrts)+"TeV_kmpl0p5_hh2b2g.dat"
 
 pbtofb = 1000
 
